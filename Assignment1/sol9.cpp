@@ -1,12 +1,12 @@
 int birthdayCakeCandles(vector<int> candles) {
-    int t=1;
-    int count=candles[0];
+    int t=candles[0];
+    int count=1;
     for(int i=1;i<candles.size();i++){
-        if(candles[i]>count){
-            count=candles[i];
-            t=1;
+        if(candles[i]>t){
+            t=candles[i];
+            count=1;
         }else{
-              if(candles[i]==count){
+              if(candles[i]==t){
                   count++;
               }
     
