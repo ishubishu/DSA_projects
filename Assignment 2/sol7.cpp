@@ -12,7 +12,9 @@ bool isPrime(int a){
     return true;
 }
 int main() {
-    for(int i=1;i<30;i++){
+    int a;
+    cin>>a;
+    for(int i=1;i<sqrt(a);i++){
          if (isPrime(i)){
             cout<<"the number "<<i<<" is prime\n";
          }
