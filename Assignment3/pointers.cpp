@@ -3,9 +3,9 @@
 using namespace std;
 void update(int *a,int *b) {
    
-   int sum= *a;
+   int v= *a;
    *a =*a+*b;
-   *b=sum-*b;
+   *b=v-*b;
    if(*b<0){
        *b=-*b;
    }
