@@ -1,0 +1,24 @@
+#include<bits/stdc++.h>
+using namespace std;
+void reverse(string &A){
+	int n=A.length()-1;
+	for(int j=0;j<n/2;j++){
+		if(j==n-j)
+		    break;
+			swap(A[j],A[n-j]);
+			
+		}
+	
+	
+}
+int main(){
+	string s={"hello world"};
+
+	reverse(s);
+	for(int j=0;j<=s.length();j++){
+		cout<<s[j]<<" ";
+	}
+	
+	
+	return 0;
+}
