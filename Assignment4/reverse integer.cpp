@@ -1,7 +1,8 @@
 class Solution {
 public:
     int reverse(int x) {
-        int rem,rev=0;
+        int rem;
+        long long rev = 0;
         while(x!=0){
             rem=x%10;
             rev=rev*10+rem;
@@ -10,6 +11,9 @@ public:
             
             
         }
+        if (rev>INT_MAX||rev<INT_MIN){
+        return 0;
+    }
         return rev;
     }
 };
