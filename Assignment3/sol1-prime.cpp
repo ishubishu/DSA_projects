@@ -3,8 +3,8 @@ using namespace std;
 #define int long long
 
 vector<int>Prime;
-void Seive(){
-    int Max=15;
+void Seive(int n){
+    int Max=n;
     vector<bool>isPrime(Max,1);
     isPrime[1]=0;
     for(int i=2;i<Max;i++){
@@ -17,7 +17,9 @@ void Seive(){
 }
 
 signed main() {
-    Seive();
+    int n;
+    cin>>n;
+    Seive(n);
     int count=0;
     for(int k=0;k<Prime.size();k++){
     	count++;
