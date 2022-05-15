@@ -1,40 +1,44 @@
 class Solution {
 public:
-    void merge(vector<int>& v, int s, int m, int e){
-    vector<int> b;
-	int i=s, j=m+1;
-	while (i <= m && j <= e) {
-		if (v[i] <= v[j]) {
-			b.push_back(v[i]);
-			i++;
-		}
-		else {
-			b.push_back(v[j]);
-			j++;
-		}
-	}
-	while (i <= m) {
-		b.push_back(v[i]);
-		i++;
-	}
-	while (j <= e) {
-		b.push_back(v[j]);
-		j++;
-	}
-	for (int i = s; i <= e; ++i)
-		v[i] = b[i - s];
-}
-    void MergeSort(vector<int>& v, int start, int end) {
-	if (start < end) {
-		int mid = (start + end) / 2;
-		MergeSort(v, start, mid);
-		MergeSort(v, mid + 1, end);
-        merge(v,start,mid,end);
-	}
-}
+    void merge(vector<int>& A, int start,int mid,int end){
+        int i=start, j=mid+1;
+        vector<int> B;
+        while(i<=mid&&j<=end){
+            if(A[i]<=A[j]){
+                B.push_back(A[i]);
+                i++;
+            }
+            else{
+                B.push_back(A[j]);
+                    j++;
+            }
+        }
+        while(i<=mid){
+            B.push_back(A[i]);
+            i++;
+        }
+        while(j<=end){
+            B.push_back(A[j]);
+            j++;
+        }
+        for(int i=start;i<=end;++i)
+            A[i]=B[i-start];
+            
+            
+    }
+    void sort(vector<int>& A, int start, int end){
+        if(start<end){
+            int mid=(start+end)/2;
+            sort(A,start,mid);
+            sort(A,mid+1,end);
+            merge(A,start,mid,end);
+        }
+    }
+    
     vector<int> sortArray(vector<int>& nums) {
-        int n = nums.size();
-        MergeSort(nums,0,n-1);
+        int n=nums.size();
+        sort(nums,0,n-1);
         return nums;
+        
     }
 };
