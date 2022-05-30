@@ -1,0 +1,37 @@
+#include<bits/stdc++.h>
+using namespace std;
+string compare(string a,string b){
+    int a1=a.length();
+    int b1=b.length();
+    string big="";
+    if(a1>=b1){
+        for(int i=0;i<a1;i++){
+            if((a[i]-'0')>=(b[i]-'0')){
+                big=a;
+            }
+        }
+    }
+    else{
+        big=b;
+    }
+    return big;
+}
+string subtract(string a,string b){
+    if(compare(a,b)==a){
+        for(int i=a.length()-1;i>=0;i--){
+            for(int j=b.length()-1;j>=0;j--){
+                if((a[i]-'0')>=(b[j]-'0')){
+                    int s=((a[i]-'0')-(b[j]-'0'));
+                }else{
+                    
+                }
+            }
+        }
+    }
+}
+int main(){
+    string a="12";
+    string b="111";
+    cout<<compare(a,b);
+    return 0;
+}
