@@ -1,0 +1,23 @@
+int maxsum(vector<int> &A, int B){
+    int sum=0;
+    int currsum=0;
+    for(int i=0;i<B;i++){
+        currsum+=A[i];
+    }
+    sum=currsum;
+    int j=A.size()-1;
+    for(int i=B-1;i>=0;i--){
+        currsum+=A[j]-A[i];
+        sum=max(currsum,sum);
+        j--;
+    }
+    return sum;
+}
+
+
+
+int Solution::solve(vector<int> &A, int B) {
+    
+    return maxsum(A,B);
+    
+}
