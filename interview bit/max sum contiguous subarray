@@ -1,0 +1,15 @@
+int Solution::maxSubArray(const vector<int> &A) {
+    int maxsum=0;
+    int maximum=INT_MIN;
+    for(int i=0;i<A.size();i++){
+        maxsum=maxsum+A[i];
+        if(maximum<maxsum){
+            maximum=maxsum;
+        }
+        if(maxsum<0){
+            maxsum=0;
+        }
+        
+    }
+    return maximum;
+}
